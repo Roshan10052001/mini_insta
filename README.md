@@ -7,6 +7,7 @@ npm create vite@latest mini-insta -- --template react
 4.	After that, I started the development server using npm run dev.
 5.	The app successfully launched at http://localhost:5173/.
 6.	The browser displayed the default Vite + React screen, confirming that the development server and Hot Module Replacement were working properly.
+![Screenshot 1](public/screenshots/image1.png)
  
 PART 1:Data Model
 1.	I created a new file named posts.js inside the src/data folder.
@@ -48,28 +49,26 @@ PART 5: Composer (new post)
 5.	Clears the inputs to confirm success.
 6.	I rendered <Composer setPosts={setPosts} /> above <Feed /> in App.jsx, so new posts appear at the top.
 
- 
-			This is the URL bar to paste URL
            
 This is an image posted by me with a caption.
 
 
 PART 6: Routing & Persistence
-•	Added client-side routing with react-router-dom:
-o	Wrapped the app in <BrowserRouter> (in main.jsx).
-o	Declared routes in App.jsx:
-	/ → Composer + full Feed
-	/u/:handle → Profile view that filters posts by author handle
-	Fallback * → “Not found”
-o	Built Profile.jsx to read handle via useParams() and render a filtered <Feed />.
-o	Turned the author handle in PostCard.jsx into a <Link to={/u/${post.author}}>@author</Link>.
-•	Enabled persistence with localStorage so posts survive refresh:
-o	Hydration on load: initialized state from localStorage.
-o	Save on change: wrote posts to localStorage whenever they update.
-o	Used a lazy initializer in useState to avoid flashing seed data and to ensure stored posts load before first render.
-•	Tested:
-o	Added a post via Composer, refreshed, post still there.
-o	Clicked an author handle, navigated to /u/<handle> and saw only that author’s posts.
+1. Added client-side routing with react-router-dom:
+2. Wrapped the app in <BrowserRouter> (in main.jsx).
+3. Declared routes in App.jsx:
+     a]/ → Composer + full Feed
+     b]/u/:handle → Profile view that filters posts by author handle
+     c]Fallback * → “Not found”
+4] Built Profile.jsx to read handle via useParams() and render a filtered <Feed />.
+5] Turned the author handle in PostCard.jsx into a <Link to={/u/${post.author}}>@author</Link>.
+6.Enabled persistence with localStorage so posts survive refresh:
+7.Hydration on load: initialized state from localStorage.
+8.Save on change: wrote posts to localStorage whenever they update.
+9.Used a lazy initializer in useState to avoid flashing seed data and to ensure stored posts load before first render.
+10: Tested:
+		Added a post via Composer, refreshed, post still there.
+		Clicked an author handle, navigated to /u/<handle> and saw only that author’s posts.
 
  
 Polish: After doing everything this is how the page looks and this is a zoomed out picture.
