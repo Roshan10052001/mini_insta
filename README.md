@@ -17,7 +17,7 @@ PART 1:Data Model
 5.	I then imported this dataset into App.jsx to test if it was connected properly.
 6.	To verify, I displayed the total number of posts on the page.
 7.	When I ran the project using npm run dev, the browser showed “Mini Insta” and “Seed posts loaded: 2”, confirming the data was working correctly.
-Refered image :
+Refered image :![Screenshot 2](public/screenshots/image2.png)
  
 PART 2: App State & Feed
 1.	Created the main state in App.jsx using the useState() hook and initialized it with the seedPosts data from posts.js.
@@ -26,20 +26,22 @@ PART 2: App State & Feed
 4.	The Feed component takes the posts and setPosts props and maps through the posts, preparing to render each post card later.
 5.	Linked both Navbar and Feed components in App.jsx and displayed them inside the main layout.
 6.	Ran the project using npm run dev — the app successfully loaded and displayed the “Mini Insta” heading.
- 
+
+ ![Screenshot 3](public/screenshots/image3.png)
 The app successfully loads the Navbar and Feed components. Since the PostCard component has not yet been implemented, Vite shows a missing import error.
 
-PART 3: 
+PART 3: ![Screenshot 4](public/screenshots/image4.png)
 
                   
-Check point :
+Check point :![Screenshot 5](public/screenshots/image5.png)
                 
 #check point completed as we can see, like in this image and count and its visible and two pictures are also visible 
- 
+ ![Screenshot 6](public/screenshots/image6.png)
 And there is no errors or warnings. Here part 3 is completed
 PART 4: — Comments (controlled form)
 Here we can see the first comment.
- 
+ ![Screenshot 7](public/screenshots/image7.png)
+ ![Screenshot 8](public/screenshots/image8.png)
  
 PART 5: Composer (new post)
 1.	I built a Composer component with two controlled inputs: Image URL (required) and Caption.
@@ -48,8 +50,9 @@ PART 5: Composer (new post)
 4.	Prepends it to the feed with setPosts(prev => [post, ...prev]).
 5.	Clears the inputs to confirm success.
 6.	I rendered <Composer setPosts={setPosts} /> above <Feed /> in App.jsx, so new posts appear at the top.
-
-           
+![Screenshot 9](public/screenshots/image9.png)
+This is the URL bar to paste URL to make a POST
+ ![Screenshot 10](public/screenshots/image10.png)
 This is an image posted by me with a caption.
 
 
@@ -69,9 +72,20 @@ PART 6: Routing & Persistence
 10: Tested:
 		Added a post via Composer, refreshed, post still there.
 		Clicked an author handle, navigated to /u/<handle> and saw only that author’s posts.
-
- 
+ ![Screenshot 11](public/screenshots/image11.png)
+home page for particular user
+ ![Screenshot 12](public/screenshots/image12.png)
 Polish: After doing everything this is how the page looks and this is a zoomed out picture.
+ ![Screenshot 13](public/screenshots/image13.png)
+DevTools Elements view
+
+hover vid
+<video src="public/screenshots/hover.mp4" width="600" controls>
+  Your browser does not support the video tag.
+</video>
+
+
+
  
  
 
