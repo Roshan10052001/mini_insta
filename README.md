@@ -80,9 +80,8 @@ Polish: After doing everything this is how the page looks and this is a zoomed o
 DevTools Elements view
 
 hover vid
-<video src="public/screenshots/hover.mp4" width="600" controls>
-  Your browser does not support the video tag.
-</video>
+🎥 [Watch Demo Video](https://github.com/your-username/mini-insta/blob/main/public/screenshots/hover.mp4?raw=true)
+
 
 
 
