@@ -1,42 +1,80 @@
-#root {
-  max-width: 1280px;
+/* src/App.css */
+
+/* page shell */
+.page { padding: 16px 0 40px; }
+.container {
+  max-width: 980px;            /* centered like your reference */
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 16px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.brand { font-size: 22px; }
+.actions { display: flex; gap: 12px; }
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  color: #111;                 /* ensure dark text */
 }
 
+/* post card */
 .card {
-  padding: 2em;
+  background: #fff;
+  color: #111;                 /* ensure dark text on card */
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 18px 0;
 }
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+}
+.avatar { width: 36px; height: 36px; border-radius: 50%; }
+.card-img { display: block; width: 100%; height: auto; }
+.card-body { padding: 10px 14px 14px; }
+.row { display: flex; align-items: center; gap: 12px; }
 
-.read-the-docs {
-  color: #888;
+.like-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;                 /* visible like text */
+  cursor: pointer;
 }
+.likes { color: #666; }
+.caption { margin-top: 10px; }
+
+/* comment list & form */
+.comment-list { list-style: none; padding-left: 0; margin: 10px 0 0; }
+.comment-item { margin-top: 6px; }
+.comment-empty { opacity: 0.7; margin-top: 8px; }
+
+.comment-form { display: flex; gap: 6px; margin-top: 8px; }
+.comment-input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+}
+.comment-submit.btn { padding: 8px 12px; }

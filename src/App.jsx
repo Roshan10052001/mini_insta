@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { seedPosts } from "./data/posts";
+import Navbar from "./components/Navbar";
+import Feed from "./components/Feed";
+import Composer from "./components/Composer";
+import Profile from "./components/Profile";
+import "./index.css";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const STORAGE_KEY = "mini-insta-posts";
+
+export default function App() {
+  const [posts, setPosts] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved ? JSON.parse(saved) : seedPosts;
+    } catch { return seedPosts; }
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(posts)); } catch {}
+  }, [posts]);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar title="SLU-Stagram" />
+      <main className="container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Composer setPosts={setPosts} />
+                <Feed posts={posts} setPosts={setPosts} />
+              </>
+            }
+          />
+          <Route path="/u/:handle" element={<Profile posts={posts} setPosts={setPosts} />} />
+          <Route path="*" element={<p>Not found</p>} />
+        </Routes>
+      </main>
     </>
-  )
+  );
 }
-
-export default App
