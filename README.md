@@ -80,8 +80,7 @@ Polish: After doing everything this is how the page looks and this is a zoomed o
 DevTools Elements view
 
 hover vid
-🎥 [Watch Demo Video](https://github.com/your-username/mini-insta/blob/main/public/screenshots/hover.mp4?raw=true)
-
+(https://github.com/Roshan10052001/mini_insta/blob/main/public/screenshots/hover.mp4?raw=true)
 
 
 
