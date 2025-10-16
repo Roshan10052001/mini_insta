@@ -1,4 +1,5 @@
 	          Lab 2 - React Tutorial: Building a Mini-Instagram
+PUBLISH LINK : https://roshan10052001.github.io/mini_insta/
 PART 0:
 1.	I created the React project using Vite with the command:
 npm create vite@latest mini-insta -- --template react
